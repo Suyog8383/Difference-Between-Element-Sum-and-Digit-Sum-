@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Diff between element sum and digit sum</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let arr = [1, 15, 6, 3];
+
+  function findDifference(nums) {
+    let add = 0;
+    for (let i = 0; i < nums.length; i++) {
+      add += nums[i];
+    }
+    let add2 = 0;
+    for (let i = 0; i < nums.length; i++) {
+      add2 = add2 + findData(nums[i]);
+    }
+
+    function findData(num) {
+      let sum = 0;
+      while (num > 0) {
+        sum = sum + Math.trunc(num % 10);
+        num = num / 10;
+      }
+      return sum;
+    }
+
+    return add - add2;
+  }
+  console.log("@SN ", findDifference(arr));
+</script>
